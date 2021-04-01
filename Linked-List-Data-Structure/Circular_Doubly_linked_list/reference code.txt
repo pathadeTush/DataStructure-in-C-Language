@@ -1,0 +1,288 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+     int data;
+     struct node *next,*prev;
+}node;
+
+typedef node* list;
+void init(list *l);
+void append(list *l,int data);
+void insert_beg(list *l,int data);
+void traverse(list l);
+int len(list l);
+void insert(list *l,int pos,int d);
+void pop_once(list *l,int d);
+
+int main() {
+     list L1;
+     init(&L1);
+     pop_once(&L1, 1);
+     append(&L1,1);
+     append(&L1,2);
+     append(&L1,3);
+      append(&L1,4);
+      append(&L1,5);
+
+     /pop_once(&L1,9);/
+
+     traverse(L1);
+     printf("\n");
+     pop_once(&L1,9);
+     printf("\n");
+     pop_once(&L1,2);
+     traverse(L1);
+     printf("\n");
+     pop_once(&L1,1);
+     traverse(L1);
+     printf("\n");
+     pop_once(&L1,2);
+     traverse(L1);
+     printf("\n");
+     pop_once(&L1,3);
+     traverse(L1);
+     printf("\n");
+     pop_once(&L1,4);
+     traverse(L1);
+     printf("\n");
+     pop_once(&L1,5);
+     traverse(L1);
+     printf("\n");
+     pop_once(&L1,5);
+     traverse(L1);
+     printf("\n");
+
+     return 0;
+
+ }
+
+void init(list *l) {
+     *l = NULL;
+     return;
+ }
+
+void append(list *l,int d) {
+     node *p, *t;
+     t = (node*)malloc(sizeof(node));
+     if(!t) return;
+
+     t->next = t;
+     t->prev= t;
+     t->data = d;
+
+     if(*l == NULL) {
+         *l = t;
+         return;
+     }
+
+     p = *l;
+     t->next = p;
+     p->prev->next = t;
+     t->prev = p->prev;
+     p->prev = t;
+ }
+
+void insert_beg(list *l,int d) {
+
+     node *t;
+     t = (node*)malloc(sizeof(node));
+     if(t) {
+
+         t->data = d;
+
+         t->next = NULL;
+
+         t->prev = NULL;
+
+     }
+
+     else return;
+
+     if(*l == NULL) {
+
+         *l = t;
+
+         return;
+
+     }
+
+     node *p, *q;
+
+     p = *l;
+
+     t->next = p;
+
+     t->prev = p->prev;
+
+     p->prev->next = t;
+
+     p->prev = t;
+
+     *l = t;
+
+ }
+
+void traverse(list l) {
+
+     if(l == NULL)
+
+         return;
+
+     node *p;
+
+     p = l;
+
+     while(p->next != NULL) {
+
+         printf("%d ",p->data);
+
+         p = p->next;
+
+         if(p == l)
+
+             break;
+
+     }
+
+ }
+
+int len(list l) {
+
+     if(l == NULL)
+
+         return;
+
+     node *p = l;
+
+     int i = 0;
+
+     while(p->next != l) {
+
+         i++;
+
+         p = p->next;
+
+     }
+
+     return i + 1;
+
+ }
+
+void insert(list *l,int pos,int d) {
+
+     if(pos >= len(*l)) {
+
+         append(l,d);
+
+         return;
+
+     }
+
+     node *p = *l ;
+
+     int i;
+
+     for(i=0;i<pos-1;i++) {
+
+         p = p->next;
+
+     }
+
+     node *t;
+
+     t = (node*)malloc(sizeof(node));
+
+     if(t) {
+
+         t->data = d;
+
+         t->next = NULL;
+
+         t->prev = NULL;
+
+     }
+
+     else return;
+
+     t->next = p->next;
+
+     t->prev = t;
+
+     p->next->prev = t;
+
+     p->next = t;
+
+ }
+
+void pop_once(list *l, int d) {
+     if(*l == NULL){
+         printf("Empty List");
+         return ;
+     }
+
+     node *p = *l;
+
+     while(p && p->data != d) {
+         p = p->next;
+         if(p == *l)
+             break;
+     }
+
+     if(p == *l && p->data != d )
+         return;
+
+     if(p->next == p) {
+         free(p);
+         *l = NULL;
+         return;
+     }
+    if(p->data == d && p == *l) {
+         *l = p->next;
+
+     }
+     p->prev->next = p->next;
+     p->next->prev = p->prev;
+     free(p);
+     return;
+
+
+ /*
+
+     int temp;
+
+     if(p->prev->data == d) {
+
+         temp = p->prev->data;
+
+         p->prev->data = p->prev->prev->data;
+
+         p->prev->prev->data = temp;
+
+     }
+
+     p = p->next;
+
+
+     while(p != *l) {
+
+         if(p->data == d) {
+
+             p->prev->prev = p->next;
+
+             p->prev->prev->next = p;
+
+             free(p);
+
+             return;
+
+         }
+
+         p = p->next;*/
+
+
+
+
+
+
+     }
