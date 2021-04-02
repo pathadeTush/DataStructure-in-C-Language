@@ -1,3 +1,8 @@
+/*
+*     Author : Tushar Chakradhar Pathade    
+*     Follow : pathadeTush @https://github.com/pathadeTush
+*/
+
 typedef struct node{
     int data;
     struct node *next;

@@ -1,3 +1,8 @@
+/*
+*     Author : Tushar Chakradhar Pathade    
+*     Follow : pathadeTush @https://github.com/pathadeTush
+*/
+
 #include<stdio.h>
 #include"Circular_Doubly_linked_list.h"
 #include<limits.h>

@@ -1,3 +1,8 @@
+/*
+*     Author : Tushar Chakradhar Pathade    
+*     Follow : pathadeTush @https://github.com/pathadeTush
+*/
+
 #include <stdio.h>
 #include<stdlib.h>
 #include<limits.h>

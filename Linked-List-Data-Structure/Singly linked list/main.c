@@ -1,3 +1,7 @@
+/*
+*     Author : Tushar Chakradhar Pathade    
+*     Follow : pathadeTush @https://github.com/pathadeTush
+*/
 
 #include<stdio.h>
 #include"list.h"
