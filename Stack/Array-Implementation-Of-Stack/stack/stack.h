@@ -1,6 +1,6 @@
 /*
 *     Author : Tushar Chakradhar Pathade    
-*     Follow : pathadeTush @https://github.com/pathadeTush
+*     Source : https://github.com/pathadeTush
 */
 
 typedef struct stack

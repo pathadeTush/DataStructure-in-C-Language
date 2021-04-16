@@ -1,10 +1,7 @@
 /*
 *     Author : Tushar Chakradhar Pathade    
-*     Follow : pathadeTush @https://github.com/pathadeTush
+*     Source : https://github.com/pathadeTush
 */
-
-
-
 
 /*
 Algorithm to convert infix expression to postfix

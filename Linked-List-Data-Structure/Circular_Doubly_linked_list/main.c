@@ -1,7 +1,6 @@
 /*
 *     Author : Tushar Chakradhar Pathade    
-*     Follow : pathadeTush @https://github.com/pathadeTush
-*/
+*     Source : https://github.com/pathadeTush
 
 #include<stdio.h>
 #include"Circular_Doubly_linked_list.h"
@@ -16,29 +15,29 @@ int main(){
         printf("Empty List\n");
     else
         printf("%d\n",e );*/
-    append(&L1, 10);
-    append(&L1, 20);
-    append(&L1, 30);
-    append(&L1, 40);
+append(&L1, 10);
+append(&L1, 20);
+append(&L1, 30);
+append(&L1, 40);
 
-    traverse(L1);
-    //destroy(&L1);
-   // printf("\n");
-    //printf("%d\n", pop(&L1));
-   // printf("%s", search(L1, 20)? "found\n": "not found\n");
-    //insert_At(&L1, 6, 120);
-   // traverse(L1);
-    //Remove(&L1, 10);
-   // traverse(L1);
-   // printf("%d\n", len(L1));
-    //pop_last(&L1);
-    //destroy(&L1);
-   // append(&L1, 20);
-    reverse(&L1);
-    traverse(L1);
-    Remove_At(&L1, 1); // not index
-    sort(&L1);
-    traverse(L1);
+traverse(L1);
+//destroy(&L1);
+// printf("\n");
+//printf("%d\n", pop(&L1));
+// printf("%s", search(L1, 20)? "found\n": "not found\n");
+//insert_At(&L1, 6, 120);
+// traverse(L1);
+//Remove(&L1, 10);
+// traverse(L1);
+// printf("%d\n", len(L1));
+//pop_last(&L1);
+//destroy(&L1);
+// append(&L1, 20);
+reverse(&L1);
+traverse(L1);
+Remove_At(&L1, 1); // not index
+sort(&L1);
+traverse(L1);
 
 /*
 insertAt(&L1, 0, 50);
